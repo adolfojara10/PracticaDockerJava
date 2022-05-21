@@ -1,0 +1,7 @@
+ec\edu\ups\sd\business\PersonaON.class
+ec\edu\ups\sd\dao\PersonaDAO.class
+ec\edu\ups\services\PersonaREST.class
+ec\edu\ups\services\AppPath.class
+ec\edu\ups\services\CORSFilter.class
+ec\edu\ups\sd\Jsf23Activator.class
+ec\edu\ups\sd\model\Persona.class

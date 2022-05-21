@@ -19,7 +19,7 @@ services:
 
 
   srvwildfly:
-    image: ups/demoappdocker
+    image: romelavil/practicaDockerJava
     container_name: srvwildfly
     hostname: srvwildfly
     environment:

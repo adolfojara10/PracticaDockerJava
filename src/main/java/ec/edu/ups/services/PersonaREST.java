@@ -3,6 +3,7 @@ package ec.edu.ups.services;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -28,15 +29,13 @@ public class PersonaREST {
 	
 	@POST
 	@Path("crear")
-	public void calcular(@QueryParam("id") int id, @QueryParam("cedula") String cedula, @QueryParam("nombre") String nombre, @QueryParam("apellido") String apellido, @QueryParam("email") String email) {
-		Persona p= new Persona();
-		p.setId(id);
-		p.setCedula(cedula);
-		p.setNombre(nombre);
-		p.setApellido(apellido);
-		p.setEmail(email);
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String guardar(@QueryParam("cedula") String cedula, @QueryParam("nombre") String nombre, @QueryParam("apellido") String apellido, @QueryParam("email") String email) {
+		
+		Persona p= new Persona(perON.calcularID(), apellido, cedula, email, nombre);
 		perON.guardarCliente(p);
-		//return resultado;
+		return p.toString();
 
 	}
 

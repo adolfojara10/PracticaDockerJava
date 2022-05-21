@@ -28,14 +28,12 @@ public class Persona implements Serializable {
 	
 	
 
-	public Persona(int id, String apellido, String cedula, String email, Date fechaNacimiento, String nombre,
-			String tipo) {
+	public Persona(int id, String apellido, String cedula, String email,  String nombre) {
 		super();
 		this.id = id;
 		this.apellido = apellido;
 		this.cedula = cedula;
 		this.email = email;
-		
 		this.nombre = nombre;
 		
 	}
