@@ -1,25 +1,9 @@
 version: '3.6'
 
 services:
-  srvdb:
-    image: postgres
-    container_name: srvdb
-    hostname: srvdb
-    environment:
-      POSTGRES_USER: practicasd
-      POSTGRES_DB: practicasd
-      POSTGRES_PASSWORD: 1234
-      TZ:  America/Guayaquil
-    ports:
-      - 5432:5432
-    networks:
-      - datalogger_net
-    volumes:
-      - pg_data2:/var/lib/postgresql/data
-
-
+  
   srvwildfly:
-    image: romelavil/practicaDockerJava
+    image: romelavil/practicadockerjava
     container_name: srvwildfly
     hostname: srvwildfly
     environment:
