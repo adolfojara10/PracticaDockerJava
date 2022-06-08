@@ -179,6 +179,11 @@
             <artifactId>arquillian-protocol-servlet</artifactId>
             <scope>test</scope>               
         </dependency>
+        <dependency>
+        	<groupId>com.amazonaws</groupId>
+        	<artifactId>aws-lambda-java-core</artifactId>
+        	<version>1.2.1</version>
+        </dependency>
     </dependencies>
 	
     <build>
@@ -197,23 +202,7 @@
                     <!-- put your configurations here -->
                 </configuration>
             </plugin>
-			<plugin>
-			  <groupId>org.codehaus.mojo</groupId>
-			  <artifactId>exec-maven-plugin</artifactId>
-			  <version>1.4</version>
-			  <executions>
-			    <execution>
-			      <id>my-execution</id>
-			      <phase>package</phase>
-			      <goals>
-			        <goal>java</goal>
-			      </goals>
-			    </execution>
-			  </executions>
-			  <configuration>
-			    <mainClass>org.dhappy.test.NeoTraverse</mainClass>
-			  </configuration>
-			</plugin>
+			
 			<!--Build configuration for the WAR plugin: -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
@@ -269,6 +258,11 @@
 						</images>
 					</configuration>
 				</plugin>
+            <plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-shade-plugin</artifactId>
+            	<version>3.2.2</version>
+            </plugin>
         </plugins>
     </build>
 
